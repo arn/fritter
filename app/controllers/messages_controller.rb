@@ -3,7 +3,9 @@ class MessagesController < ApplicationController
   # GET /messages.xml
   def index
     @message  = Message.new
-    @messages = Message.find(:all)
+    @messages = Message.paginate :page => params[:page], :order => 'updated_at DESC'
+    
+    # @messages = Message.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb

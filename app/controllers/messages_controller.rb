@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.xml
   def index
+    @message  = Message.new
     @messages = Message.find(:all)
 
     respond_to do |format|

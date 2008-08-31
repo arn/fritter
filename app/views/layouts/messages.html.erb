@@ -5,13 +5,41 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Messages: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'scaffold','base' %>
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<div id="main">
 
-<%= yield  %>
+  <div id="head">
+    <h1>messanger</h1>
+  </div> <!-- end id="head" -->
+  
+  <div id="alerts">
+    <% if flash[:notice] %>
+      <p style="color: green"><%= flash[:notice] %></p>
+    <% end %>
+  </div> <!-- end id="alerts" -->
+  
+  <div id="new_message">
+    <div id="new_message">
+      <% form_for @message do |f| %>
+        <%= f.text_area :content, :class => 'new_message' %>
+        <%= f.submit 'create' %>
+      <% end %>
+    </div>
+  </div> <!-- end id="new_message" -->
+  
+  <div id="recent_messages">
+    <%= yield  %>
+  </div> <!-- end id="recent_messages" -->
+  
+  <div id="foot">
+    
+  </div> <!-- end id="foot" -->
+  
+</div> <!-- end id="main" -->
+
 
 </body>
 </html>

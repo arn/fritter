@@ -1,14 +1,12 @@
-<div id="recent_messages">
-  <% @messages.each do |message| %>
-    <div class="message">
-      <div class="message_content">
-        <%= message.content %>
-      </div> <!-- end class="message_content" -->
-      <div class="message_metadata">
-        <%= message.created_at %> ~
-        <%= link_to 'Edit', edit_message_path(message) %> ~
-        <%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %>
-      </div> <!-- end class="message_metadata" -->
-    </div> <!-- end class="message" -->
-  <% end %>
-</div> <!-- end id="recent_messages" -->
+<% @messages.each do |message| %>
+  <div class="message">
+    <div class="message_content">
+      <%= message.content %>
+    </div> <!-- end class="message_content" -->
+    <div class="message_metadata">
+      <%= message.created_at %> ~
+      <%= link_to 'Edit', edit_message_path(message) %> ~
+      <%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %>
+    </div> <!-- end class="message_metadata" -->
+  </div> <!-- end class="message" -->
+<% end %>

@@ -17,7 +17,7 @@ class MessagesControllerTest < ActionController::TestCase
       post :create, :message => { }
     end
 
-    assert_redirected_to message_path(assigns(:message))
+    assert_redirected_to messages_path
   end
 
   def test_should_show_message

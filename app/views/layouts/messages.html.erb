@@ -5,29 +5,28 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Messages: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold','base' %>
+  <%= stylesheet_link_tag 'scaffold', 'base' %>
 </head>
 <body>
 
 <div id="main">
 
   <div id="head">
-    <h1>messanger</h1>
+    <h1>messenger</h1>
   </div> <!-- end id="head" -->
   
-  <div id="alerts">
-    <% if flash[:notice] %>
-      <p style="color: green"><%= flash[:notice] %></p>
-    <% end %>
-  </div> <!-- end id="alerts" -->
+  <% if flash[:notice] %>
+    <div id="alerts">
+      <p style="color: #888;"><%= flash[:notice] %></p>
+    </div> <!-- end id="alerts" -->
+  <% end %>
   
   <div id="new_message">
-    <div id="new_message">
-      <% form_for @message do |f| %>
-        <%= f.text_area :content, :class => 'new_message' %>
-        <%= f.submit 'create' %>
-      <% end %>
-    </div>
+    <% form_for @message do |f| %>
+      <%= f.text_area :content, :class => 'new_message' %>
+      <br />
+      <%= f.submit 'create' %>
+    <% end %>
   </div> <!-- end id="new_message" -->
   
   <div id="recent_messages">
@@ -35,7 +34,7 @@
   </div> <!-- end id="recent_messages" -->
   
   <div id="foot">
-    
+    messenger - licensed under MIT
   </div> <!-- end id="foot" -->
   
 </div> <!-- end id="main" -->

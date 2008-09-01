@@ -4,6 +4,9 @@
       <%=h message.content %>
     </div> <!-- end class="message_content" -->
     <div class="message_metadata">
+      <% message.categories.each do |c| %>
+        <%= c.name %>
+      <% end %> ~
       <%= message.created_at %> ~
       <%= link_to 'Edit', edit_message_path(message) %> ~
       <%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %>

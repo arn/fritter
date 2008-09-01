@@ -1,4 +1,4 @@
 class Categorization < ActiveRecord::Base
-  belongs_to :categories
-  belongs_to :messages
+  belongs_to :category
+  belongs_to :message
 end

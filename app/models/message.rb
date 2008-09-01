@@ -4,6 +4,15 @@ class Message < ActiveRecord::Base
   
   validates_presence_of :content, :on => :create, :message => "can't be blank"
   
+  before_save :categorize
+  
   cattr_reader :per_page
-  @@per_page = 5
+  @@per_page = 10
+  
+  
+  # method will find matches to categoris in content and create categorizations
+  def categorize
+    puts 'something'
+  end
+  
 end

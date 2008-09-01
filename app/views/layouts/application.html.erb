@@ -10,9 +10,25 @@
 <body>
 
   <div id="main">
-    <p style="color: green"><%= flash[:notice] %></p>
 
-    <%= yield  %>
+    <div id="head">
+      <h1>messenger</h1>
+    </div> <!-- end id="head" -->
+
+    <% if flash[:notice] %>
+      <div id="alerts">
+        <p style="color: #888;"><%= flash[:notice] %></p>
+      </div> <!-- end id="alerts" -->
+    <% end %>
+
+    <div id="content">
+      <%= yield  %>
+    </div> <!-- end id="content" -->
+
+    <div id="foot">
+      messenger - licensed under MIT
+    </div> <!-- end id="foot" -->
+
   </div> <!-- end id="main" -->
 
 </body>

@@ -5,6 +5,8 @@ div, p, h1, h2, h3, h4 { margin:0;padding:0; }
 div#main { width:750px;margin:0 auto 1em auto;border:3px solid #ccc;border-top:0; }
 div#head { padding:1em; }
 div#alerts { background-color:#dfd;border:1px solid #bdb;margin:1em;padding:1em; }
+div#content { padding:1em; }
+div#foot { margin-top:3em;padding:2em;font-size:80%; }
 
 div#new_message { text-align:center;padding:2em 0; }
 div#new_message textarea { width:80%;height:5em; }
@@ -20,4 +22,3 @@ div#recent_messages div.message { background-color:#eee;margin:.5em .25em;margin
 div#recent_messages div.message div.message_metadata { font-size:80%;text-align:right; }
 div#recent_messages div.pagination { padding-top:1em;text-align:center; }
 
-div#foot { margin-top:3em;padding:2em;font-size:80%; }

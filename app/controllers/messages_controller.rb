@@ -1,6 +1,9 @@
 class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.xml
+  
+  layout "messages"
+  
   def index
     @message  = Message.new
     @messages = Message.paginate :page => params[:page], :order => 'updated_at DESC'
@@ -51,7 +54,7 @@ class MessagesController < ApplicationController
         format.html { redirect_to(messages_path) }
         format.xml  { render :xml => @message, :status => :created, :location => @message }
       else
-        format.html { render :action => "new" }
+        format.html { redirect_to(messages_path) }
         format.xml  { render :xml => @message.errors, :status => :unprocessable_entity }
       end
     end

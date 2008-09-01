@@ -23,11 +23,16 @@
   
   <div id="new_message">
     <% form_for @message do |f| %>
-      <%= f.text_area :content, :class => 'new_message' %>
+      <%= f.error_messages %>
+      \<%= f.text_area :content, :class => 'new_message' %>
       <br />
       <%= f.submit 'create' %>
     <% end %>
   </div> <!-- end id="new_message" -->
+  
+  <div id="categories">
+    <%= render :partial => 'categories', :object => current_user.categories %>
+  </div> <!-- end id="categories" -->
   
   <div id="recent_messages">
     <%= yield  %>

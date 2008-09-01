@@ -9,10 +9,14 @@ div#alerts { background-color:#dfd;border:1px solid #bdb;margin:1em;padding:1em;
 div#new_message { text-align:center;padding:2em 0; }
 div#new_message textarea { width:80%;height:5em; }
 
-div#categories { float:right;width:30%; }
-
+div#categories { float:right;width:29%;padding:.25em;margin-right:1em;background-color:#e8e8ff;border:1px solid #cce; }
+div#categories table { font-size:80%;margin:1em 0; }
+div#categories table th { padding:.5em;text-align:left; }
+div#categories table td { vertical-align:top;padding-right:.25em; }
+div#categories table td.flag,
+div#categories table td.name { white-space:nowrap; }
 div#recent_messages { padding:0 1em;width:65%; }
-div#recent_messages div.message { background-color:#eee;margin:.25em;padding:.5em;border:1px solid #bbb; }
+div#recent_messages div.message { background-color:#eee;margin:.5em .25em;margin-top:0;padding:.5em;border:1px solid #bbb; }
 div#recent_messages div.message div.message_metadata { font-size:80%;text-align:right; }
 div#recent_messages div.pagination { padding-top:1em;text-align:center; }
 

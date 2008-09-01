@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
   def index
     @message  = Message.new
     @messages = Message.paginate :page => params[:page], :order => 'updated_at DESC'
+    @categories = Category.find(:all)
     
     # @messages = Message.find(:all)
 

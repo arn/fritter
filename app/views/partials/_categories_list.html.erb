@@ -1,0 +1,20 @@
+<table border="0" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th>flag</th>
+      <th>name</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% categories_list.each do |category| %>
+      <tr>
+        <td class="flag">-<%=h category.flag %></td>
+        <td class="name">--<%=h category.name %></td>
+        <td><%=h category.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "create new category", new_category_path %>

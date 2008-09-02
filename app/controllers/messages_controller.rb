@@ -6,8 +6,8 @@ class MessagesController < ApplicationController
   
   def index
     @message  = Message.new
-    @messages = Message.paginate :page => params[:page], :order => 'updated_at DESC'
-    @categories = Category.find(:all)
+    @messages = current_user.messages.paginate :page => params[:page], :order => 'updated_at DESC'
+    @categories = current_user.categories.find(:all)
     
     # @messages = Message.find(:all)
 
@@ -47,7 +47,7 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.xml
   def create
-    @message = Message.new(params[:message])
+    @message = current_user.messages.new(params[:message])
 
     respond_to do |format|
       if @message.save

@@ -2,6 +2,7 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
   has_many :messages
+  has_many :categories
   
   include Authentication
   include Authentication::ByPassword

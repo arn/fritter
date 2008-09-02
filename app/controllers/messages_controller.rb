@@ -4,6 +4,8 @@ class MessagesController < ApplicationController
   
   layout "messages"
   
+  before_filter :authorize
+  
   def index
     @message  = Message.new
     @messages = current_user.messages.paginate :page => params[:page], :order => 'updated_at DESC'
@@ -89,4 +91,10 @@ class MessagesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  protected
+  
+    def authorize
+      redirect_to welcome_index_path unless logged_in?
+    end
 end

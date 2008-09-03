@@ -2,22 +2,31 @@ body { margin:0;padding:0; }
 
 div, p, h1, h2, h3, h4 { margin:0;padding:0; }
 
-div#main { width:750px;margin:0 auto 1em auto;border:3px solid #ccc;border-top:0; }
-div#head { padding:1em; }
-div#alerts { background-color:#dfd;border:1px solid #bdb;margin:1em;padding:1em; }
-div#content { padding:1em; }
-div#foot { margin-top:3em;padding:2em;font-size:80%; }
+div#main { color:#555; }
+div#head { padding:1em 2em;background:#151512;border-bottom:2px solid #282929;color:#4b484b; }
 
-div#new_message { text-align:center;padding:2em 0; }
+div#head div#user-bar-greeting,
+div#head div#user-bar-action { float:right;padding-right:.5em; }
+div#head div#user-bar-greeting a,
+div#head div#user-bar-action a { color:#ccc; }
+
+div#alerts { background-color:#dfd;border:1px solid #bdb;margin:1em;padding:1em; }
+div#content { padding:1em 2em;color:#ccc; }
+div#content a { color:#aaa; }
+div#foot { text-align:center;margin-top:3em;padding:2em;font-size:80%; }
+
+div#content, div#new_message { background-color:#1f1e1e; }
+
+div#new_message { text-align:center;padding:2em 0 1em 0;margin-bottom:2em; }
 div#new_message textarea { width:80%;height:5em; }
 
-div#categories { float:right;width:29%;padding:.25em;margin-right:1em;background-color:#e8e8ff;border:1px solid #cce; }
+div#categories { float:right;width:33%;padding:.25em;margin-right:1em;background-color:#e8e8ff;border:1px solid #cce; }
 div#categories table { font-size:80%;margin:1em 0; }
 div#categories table th { padding:.5em;text-align:left; }
 div#categories table td { vertical-align:top;padding-right:.25em; }
 div#categories table td.flag,
 div#categories table td.name { white-space:nowrap; }
-div#recent_messages { padding:0 1em;width:65%; }
+div#recent_messages { padding:0 1em;width:62%; }
 div#recent_messages div.message { background-color:#eee;margin:.5em .25em;margin-top:0;padding:.5em;border:1px solid #bbb; }
 div#recent_messages div.message div.message_metadata { font-size:80%;text-align:right; }
 div#recent_messages div.pagination { padding-top:1em;text-align:center; }

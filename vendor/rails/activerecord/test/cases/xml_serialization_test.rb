@@ -42,11 +42,11 @@ end
 
 class DefaultXmlSerializationTest < ActiveRecord::TestCase
   def setup
-    @xml = Contact.new(:name => 'aaron stack', :age => 25, :avatar => 'binarydata', :created_at => Time.utc(2006, 8, 1), :awesome => false, :preferences => { :gem => 'ruby' }).to_xml
+    @xml = Contact.new(:name => 'quentin stack', :age => 25, :avatar => 'binarydata', :created_at => Time.utc(2006, 8, 1), :awesome => false, :preferences => { :gem => 'ruby' }).to_xml
   end
 
   def test_should_serialize_string
-    assert_match %r{<name>aaron stack</name>},     @xml
+    assert_match %r{<name>quentin stack</name>},     @xml
   end
 
   def test_should_serialize_integer

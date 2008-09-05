@@ -38,7 +38,7 @@
 
 * Add first/last methods to associations/named_scope. Resolved #226. [Ryan Bates]
 
-* Added SQL escaping for :limit and :offset #288 [Aaron Bedra, Steven Bristol, Jonathan Wiess] 
+* Added SQL escaping for :limit and :offset #288 [quentin Bedra, Steven Bristol, Jonathan Wiess] 
 
 * Added first/last methods to associations/named_scope. Resolved #226. [Ryan Bates]
 

@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   
   layout "messages"
   
-  before_filter :authorize
+  # before_filter :authorize
   
   def index
     @message  = Message.new

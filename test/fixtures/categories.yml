@@ -5,6 +5,7 @@ one:
   flag: MyString
   description: MyText
   private: false
+  user: quentin
 
 two:
   name: MyString

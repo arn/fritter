@@ -57,7 +57,7 @@ class UserTest < ActiveSupport::TestCase
     assert_equal users(:quentin), User.authenticate('quentin2', 'monkey')
   end
 
-  def test_should_authenticate_user
+  should "authenticate user" do
     assert_equal users(:quentin), User.authenticate('quentin', 'monkey')
   end
 

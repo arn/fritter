@@ -5,11 +5,11 @@ sample:
   flag: s
   description: Sample category
   private: false
-  user: quentin
+  user_id: 1
 
 diary:
   name: diary
   flag: d
   description: Diary category
   private: false
-  user: aaron
+  user_id: 2

@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class CategorizationTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  def test_truth
-    assert true
-  end
+  should_belong_to :category
+  should_belong_to :message
 end

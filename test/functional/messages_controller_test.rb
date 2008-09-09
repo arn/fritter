@@ -26,23 +26,23 @@ class MessagesControllerTest < ActionController::TestCase
   end
 
   def test_should_show_message
-    get :show, :id => messages(:one).id
+    get :show, :id => messages(:sample_msg).id
     assert_response :success
   end
 
   def test_should_get_edit
-    get :edit, :id => messages(:one).id
+    get :edit, :id => messages(:sample_msg).id
     assert_response :success
   end
 
   def test_should_update_message
-    put :update, :id => messages(:one).id, :message => { }
+    put :update, :id => messages(:sample_msg).id, :message => { :content => "test" }
     assert_redirected_to message_path(assigns(:message))
   end
 
   def test_should_destroy_message
     assert_difference('Message.count', -1) do
-      delete :destroy, :id => messages(:one).id
+      delete :destroy, :id => messages(:sample_msg).id
     end
 
     assert_redirected_to messages_path

@@ -12,12 +12,12 @@ class Message < ActiveRecord::Base
   
   protected
 
-    def categorize
-      self.user.categories.find(:all).each do |c|
-        if self.content.match(/^\-#{c.flag}\b|\s\-#{c.flag}\b/) || self.content.match(/\W\-\-#{c.name}\b/)
-          self.categorizations.build( :message_id => self.id, :category_id => c.id )
-        end
+  def categorize
+    self.user.categories.each do |c|
+      if self.content.match(/^\s?(\-#{c.flag}|\-\-#{c.name})\b/)
+        self.categories << c
       end
     end
+  end
   
 end

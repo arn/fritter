@@ -4,8 +4,6 @@ class MessagesController < ApplicationController
   
   layout "messages"
   
-  # before_filter :authorize
-  
   def index
     @message  = Message.new
     @messages = current_user.messages.paginate :page => params[:page], :order => 'updated_at DESC'
@@ -22,7 +20,7 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.xml
   def show
-    @message = Message.find(params[:id])
+    @message = current_user.messages.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -33,7 +31,7 @@ class MessagesController < ApplicationController
   # GET /messages/new
   # GET /messages/new.xml
   def new
-    @message = Message.new
+    @message = current_user.messages.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,7 +41,7 @@ class MessagesController < ApplicationController
 
   # GET /messages/1/edit
   def edit
-    @message = Message.find(params[:id])
+    @message = current_user.messages.find(params[:id])
   end
 
   # POST /messages
@@ -66,7 +64,7 @@ class MessagesController < ApplicationController
   # PUT /messages/1
   # PUT /messages/1.xml
   def update
-    @message = Message.find(params[:id])
+    @message = current_user.messages.find(params[:id])
 
     respond_to do |format|
       if @message.update_attributes(params[:message])
@@ -83,7 +81,7 @@ class MessagesController < ApplicationController
   # DELETE /messages/1
   # DELETE /messages/1.xml
   def destroy
-    @message = Message.find(params[:id])
+    @message = current_user.messages.find(params[:id])
     @message.destroy
 
     respond_to do |format|
@@ -92,9 +90,4 @@ class MessagesController < ApplicationController
     end
   end
   
-  protected
-  
-    def authorize
-      redirect_to welcome_index_path unless logged_in?
-    end
 end

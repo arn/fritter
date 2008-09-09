@@ -1,14 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  flag: MyString
-  description: MyText
+sample:
+  name: sample
+  flag: s
+  description: Sample category
   private: false
   user: quentin
 
-two:
-  name: MyString
-  flag: MyString
-  description: MyText
+diary:
+  name: diary
+  flag: d
+  description: Diary category
   private: false
+  user: aaron

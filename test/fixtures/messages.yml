@@ -1,8 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  content: MyText
+sample_msg:
+  content: -s Sample message
   user_id: 1
 
-two:
-  content: MyText
+diary_msg:
+  content: -d Diary message
+  user_id: 2

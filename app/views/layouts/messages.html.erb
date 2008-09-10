@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -16,12 +16,6 @@
     <h1>fritter</h1>
   </div> <!-- end id="head" -->
   
-  <% if flash[:notice] %>
-    <div id="alerts">
-      <p style="color: #888;"><%= flash[:notice] %></p>
-    </div> <!-- end id="alerts" -->
-  <% end %>
-  
   <div id="new_message">
     <% form_for @message do |f| %>
       <%= f.error_messages %>
@@ -30,6 +24,12 @@
       <%= f.submit 'deliver' %>
     <% end %>
   </div> <!-- end id="new_message" -->
+  
+  <% if flash[:notice] %>
+    <div id="alerts">
+      <p style="color: #888;"><%= flash[:notice] %></p>
+    </div> <!-- end id="alerts" -->
+  <% end %>
   
   <% if controller.action_name == 'index' %>
     <div id="categories">

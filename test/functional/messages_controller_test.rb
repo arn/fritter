@@ -9,7 +9,7 @@ class MessagesControllerTest < ActionController::TestCase
   should "get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:messages)
+    assert_not_nil assigns(:messages)    
   end
 
   def test_should_get_new

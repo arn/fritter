@@ -6,13 +6,17 @@ class MessageTest < ActiveSupport::TestCase
   should_have_many :categorizations
   should_have_many :categories
   
-  def test_setting_categories
-    @message = Message.new
-    @message.user = users(:quentin)
-    @message.content = '-s ample message'
-    @message.save
+  context "Saving a message" do
+    should "increases Message.count" do
+      assert_difference 'Message.count' do
+        @message = Message.create( :content => 'some content', :user_id => 1 )
+      end
+    end
     
-    assert_equal [categories(:sample)], @message.categories
+    should "sets a category" do
+      @message = Message.create( :content => '-s sample message', :user_id => 1 )
+      assert_equal 1, @message.categories.count
+      assert_equal [categories(:sample)], @message.categories
+    end
   end
-  
 end

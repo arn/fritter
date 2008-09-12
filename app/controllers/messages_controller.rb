@@ -1,7 +1,5 @@
 class MessagesController < ApplicationController
-  # GET /messages
-  # GET /messages.xml
-  
+
   layout "messages"
   
   def index
@@ -9,16 +7,12 @@ class MessagesController < ApplicationController
     @messages = current_user.messages.paginate :page => params[:page], :order => 'updated_at DESC'
     @categories = current_user.categories.find(:all)
     
-    # @messages = Message.find(:all)
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @messages }
     end
   end
 
-  # GET /messages/1
-  # GET /messages/1.xml
   def show
     @message = current_user.messages.find(params[:id])
 
@@ -28,8 +22,6 @@ class MessagesController < ApplicationController
     end
   end
 
-  # GET /messages/new
-  # GET /messages/new.xml
   def new
     @message = current_user.messages.new
 
@@ -39,7 +31,6 @@ class MessagesController < ApplicationController
     end
   end
 
-  # GET /messages/1/edit
   def edit
     @message = current_user.messages.find(params[:id])
   end

@@ -5,42 +5,47 @@ class MessagesControllerTest < ActionController::TestCase
   def setup
     login_as('quentin')
   end
-  
-  should "get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:messages)    
+
+  context "GET on :index" do
+    setup do
+      get :index
+    end
+    
+    should_render_a_form
+    should_respond_with :success
+    should_assign_to :messages
   end
 
-  def test_should_get_new
+  should ":new with GET and no :id" do
     get :new
     assert_response :success
   end
 
-  def test_should_create_message
-    assert_difference('Message.count') do
+  should "POST creates message" do
+    assert_difference 'Message.count' do
       post :create, :message => { :content => 'something' }
     end
 
     assert_redirected_to messages_path
   end
 
-  def test_should_show_message
+  should ":show with GET and an :id" do
     get :show, :id => messages(:sample_msg).id
     assert_response :success
   end
 
-  def test_should_get_edit
+  should ":edit with GET and an :id" do
     get :edit, :id => messages(:sample_msg).id
+    assert_template "edit"
     assert_response :success
   end
 
-  def test_should_update_message
+  should "PUT updates a message" do
     put :update, :id => messages(:sample_msg).id, :message => { :content => "test" }
     assert_redirected_to message_path(assigns(:message))
   end
 
-  def test_should_destroy_message
+  should "DELETE destroy a message" do
     assert_difference('Message.count', -1) do
       delete :destroy, :id => messages(:sample_msg).id
     end

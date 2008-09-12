@@ -10,6 +10,8 @@ class Message < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = 10
   
+  named_scope :public, :include => :categories, :conditions => { 'categories.private' => false }
+  
   protected
 
   def categorize

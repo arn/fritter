@@ -6,6 +6,10 @@ class MessageTest < ActiveSupport::TestCase
   should_have_many :categorizations
   should_have_many :categories
   
+  should_require_attributes :content
+  
+  should_have_named_scope :public
+  
   context "Saving a message" do
     should "increases Message.count" do
       assert_difference 'Message.count' do
